@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { PipesComponent } from './components/pipes/pipes.component';
+import { TemplateComponent } from './components/template/template.component';
+import { ReactiveComponent } from './components/reactive/reactive.component';
+
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet , RouterLink,TemplateComponent,ReactiveComponent,PipesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,0 +1,72 @@
+<form #form = "ngForm">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" name = "email" [(ngModel)] = "templateObj.email" class="form-control" id="inputEmail4" placeholder="Email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password</label>
+      <input type="password" name="password" [(ngModel)] ="templateObj.password" class="form-control" id="inputPassword4" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" name="address" #fAddress1="ngModel" [(ngModel)] ="templateObj.address" class="form-control" id="inputAddress" required minlength="3" placeholder="1234 Main St">
+    <div class="text-danger">
+      @if ( (fAddress1.touched || fAddress1.dirty) && fAddress1.errors?.['required']){
+        <span>
+          This is required
+        </span>
+      } @else if((fAddress1.touched || fAddress1.dirty) && fAddress1.errors?.['minlength']){
+        <span>Min 3 chars required </span>
+      }
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input type="text" name="adress2" #fAddress="ngModel" [(ngModel)] = "templateObj.adress2" class="form-control" required minlength="3" id="inputAddress2" placeholder="Apartment, studio, or floor" >
+  <div class="text-danger">
+    @if ( (fAddress.touched || fAddress.dirty) && fAddress.errors?.['required']){
+      <span>
+        This is required
+      </span>
+    } @else if((fAddress.touched || fAddress.dirty) && fAddress.errors?.['minlength']){
+      <span>Min 3 chars required </span>
+    }
+  </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" name="city" [(ngModel)] = "templateObj.city" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select class="form-control" name="state" [(ngModel)] = "templateObj.state" id="inputState">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" name="zipcode" [(ngModel)] = "templateObj.zipcode" class="form-control" id="inputZip">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input name="checkbox" [(ngModel)] = "templateObj.checkbox" class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <button type="submit" [disabled] = "form.invalid" (click)="onClick()" class="btn btn-primary">Sign in</button>
+  <button type="button"  (click)="resetValue()" class="btn btn-secondary">Reset</button>
+</form>
+<div class="col-4">
+  {{formValue | json}}
+</div>

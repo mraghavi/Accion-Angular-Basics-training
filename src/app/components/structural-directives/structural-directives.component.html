@@ -1,0 +1,13 @@
+
+<div *ngIf="isboxvisible" class="directves" id="Box1">
+    <h2>Box1</h2>
+</div>
+
+<div *ngIf="istoggle" class="directves" id="Box3">
+    <h2>Box3</h2>
+</div>
+
+<button class="button_one" (click)="onBox1()" id="onButton">On</button>
+<button class="button_two"(click)="offBox1()" id="offButton">Off</button>
+<button class="toggle"(click)="toggle()" id="toggle">toggle</button>
+<button class="switch" (click)="switch()" id="switch" [routerLink] = "['/attribute-directives']">switch to attribute-directives</button>

@@ -1,0 +1,32 @@
+.directves {
+    border: 1px solid #000;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(106, 86, 172);
+}
+.button_one {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: green;
+}
+.button_two {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: rgb(110, 9, 9);
+}
+.toggle {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: rgb(196, 199, 28);
+}
+.switch {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: rgb(28, 57, 199);
+}
