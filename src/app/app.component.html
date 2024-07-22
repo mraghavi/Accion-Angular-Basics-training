@@ -1,46 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="app.component.css">
+  <title>Angular Learnings</title>
 </head>
 <body>
- 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Angular Learnings</a>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <!-- Brand name on top -->
+        <a class="navbar-brand">Angular Learnings</a>
+        <!-- Menu button centered -->
+        <button type="button" class="navbar-toggle" (click)="toggleSidebar()">
+          <span class="menu-text">Menu</span>
+        </button>
+      </div>
     </div>
+  </nav>
+
+  <!-- Sidebar with dynamic class based on sidebarOpen -->
+  <div [ngClass]="{'sidebar': true, 'sidebar-open': sidebarOpen}" id="mySidebar">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a routerLink ="one">One-Component</a></li>
-      <li><a routerLink ="two">two-Component</a></li>
-      <li><a routerLink ="data-binding">dataBinding-Component</a></li>
-      <li><a routerLink ="structural-directives">srtucturalDirectives-Component</a></li>
-      <li><a routerLink ="attribute-directives">attributeDirective-Component</a></li>
-      <li><a routerLink ="reactive-form">ReactiveComponent</a></li>
-      <li><a routerLink ="template-form">TemplateComponent</a></li>
-      <li><a routerLink ="pipes">PipesComponent</a></li>
-   
+      <li><a routerLink="/home" (click)="toggleSidebar()">Home</a></li>
+      <li><a routerLink="/one" (click)="toggleSidebar()">One-Component</a></li>
+      <li><a routerLink="/two" (click)="toggleSidebar()">Two-Component</a></li>
+      <li><a routerLink="/data-binding" (click)="toggleSidebar()">DataBinding-Component</a></li>
+      <li><a routerLink="/structural-directives" (click)="toggleSidebar()">StructuralDirectives-Component</a></li>
+      <li><a routerLink="/attribute-directives" (click)="toggleSidebar()">AttributeDirective-Component</a></li>
+      <li><a routerLink="/reactive-form" (click)="toggleSidebar()">ReactiveComponent</a></li>
+      <li><a routerLink="/template-form" (click)="toggleSidebar()">TemplateComponent</a></li>
+      <li><a routerLink="/pipes" (click)="toggleSidebar()">PipesComponent</a></li>
     </ul>
   </div>
-</nav>
- 
-<div class="container">
- 
-</div>
 
-
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 </body>
 </html>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
-
-
-
-

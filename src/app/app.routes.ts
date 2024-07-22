@@ -7,8 +7,21 @@ import { AttributeDirectivesComponent } from './components/attribute-directives/
 import { ReactiveComponent } from './components/reactive/reactive.component';
 import { TemplateComponent } from './components/template/template.component';
 import { PipesComponent } from './components/pipes/pipes.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { HomeComponent } from './components/home/home.component';
 
 export const routes: Routes = [
+    { 
+        path: '',
+         redirectTo: '/home',
+          pathMatch: 'full' 
+    },
+   
+    {
+        path :'home',
+        component: HomeComponent
+    },
+    
     {
         path :'one',
         component: OneComponent
@@ -43,7 +56,10 @@ export const routes: Routes = [
         path :'pipes',
         component: PipesComponent
    
-    }
-    
+    },
+    {
+        path: '**',
+       component: NotfoundComponent
+   } 
    
 ];
