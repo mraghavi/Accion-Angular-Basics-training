@@ -9,6 +9,7 @@ import { TemplateComponent } from './components/template/template.component';
 import { PipesComponent } from './components/pipes/pipes.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { HomeComponent } from './components/home/home.component';
+import { ApiGetComponent } from './components/api-get/api-get.component';
 
 export const routes: Routes = [
     { 
@@ -55,6 +56,11 @@ export const routes: Routes = [
     {
         path :'pipes',
         component: PipesComponent
+   
+    },
+    {
+        path :'api-get',
+        component: ApiGetComponent
    
     },
     {
