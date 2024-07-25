@@ -1,0 +1,116 @@
+.parent {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(-45deg, #ffb8c3d3, #ffafc1, #fcd6dc, #ffb8c3);
+    animation: gradient 12s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 35px;
+    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.2);
+    max-width: 400px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #ff69b4;
+    font-family: 'Indie Flower', cursive;
+    font-size: 32px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"],
+.login-container input[type="button"] {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 16px;
+    border: none;
+    background-color: #f7eef0;
+    border-radius: 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.login-container input[type="button"] {
+    background-color: #ff69b4;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.25mm;
+}
+
+.password-toggle {
+    position: relative;
+}
+
+.password-toggle-btn {
+    position: absolute;
+    right: 10px;
+    transform: translateY(15px);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ff69b4;
+    transition: color 0.3s ease;
+}
+
+.password-toggle-btn:hover {
+    color: #ff4681;
+}
+
+.login-container input[type="text"]:hover,
+.login-container input[type="password"]:hover {
+    background-color: #fce6eb;
+}
+
+.login-container input[type="button"]:hover {
+    background-color: #ff4681;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 99.175%;
+    background-color: #ff69b4;
+    color: #ffffffe9;
+    text-align: center;
+    padding: 12px;
+    box-shadow: 0 -2px 5px rgba(125, 125, 125, 0.438);
+    border-radius: 15px 15px 0px 0px;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, border-radius 0.6s ease, color 0.4s ease;
+}
+
+footer:hover {
+    cursor: copy;
+    background-color: #ff4681;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.361);
+    border-radius: 0px;
+    color: #fff;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, border-radius 0.6s ease, color 0.4s ease;
+}

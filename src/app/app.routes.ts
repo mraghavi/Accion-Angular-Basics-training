@@ -11,14 +11,26 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { HomeComponent } from './components/home/home.component';
 import { ApiGetComponent } from './components/api-get/api-get.component';
 import { ParentComponent } from './components/parent/parent.component';
+import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 export const routes: Routes = [
     { 
         path: '',
-         redirectTo: '/home',
+         redirectTo: 'login',
           pathMatch: 'full' 
     },
-   
+    
+    {
+        path :'login',
+        component: LoginComponent
+    },
+    {
+        path :'',
+        component: LayoutComponent,
+        children:[
+
+            
     {
         path :'home',
         component: HomeComponent
@@ -69,9 +81,13 @@ export const routes: Routes = [
         component: ParentComponent
    
     },
+   
+]
+    },
     {
         path: '**',
        component: NotfoundComponent
    } 
+    
    
 ];

@@ -1,0 +1,45 @@
+/* Reset some default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .not-found-container {
+    text-align: center;
+    color: #333;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .not-found-container h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #e74c3c; /* Red color for the 404 error */
+  }
+  
+  .not-found-container p {
+    font-size: 1.2em;
+    margin: 10px 0 0;
+    color: #666;
+  }
+  
+  @media (max-width: 600px) {
+    .not-found-container h1 {
+      font-size: 2.5em;
+    }
+  
+    .not-found-container p {
+      font-size: 1em;
+    }
+  }
+  
