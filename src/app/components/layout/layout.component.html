@@ -1,58 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="layout.component.css">
-  
-  <title>Angular Learnings</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Angular Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./layout.component.css" />
 </head>
+
 <body>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <!-- Brand name on top -->
-        <a class="navbar-brand">Angular Learnings</a>
-        <!-- Menu button centered -->
-        
-        
-            <button type="button" class="navbar-toggle" (click)="toggleSidebar()">
-              <span class="menu-text">Menu</span>
-            </button>
-          
-      </div>
-    </div>
-  </nav>
-
-  <!-- Sidebar with dynamic class based on sidebarOpen -->
-  <div [ngClass]="{'sidebar': true, 'sidebar-open': sidebarOpen}" id="mySidebar">
-    <ul class="nav navbar-nav">
-      <li><a routerLink="/home" (click)="toggleSidebar()">Home</a></li>
-      <li><a routerLink="/one" (click)="toggleSidebar()">One-Component</a></li>
-      <li><a routerLink="/two" (click)="toggleSidebar()">Two-Component</a></li>
-      <li><a routerLink="/data-binding" (click)="toggleSidebar()">DataBinding-Component</a></li>
-      <li><a routerLink="/structural-directives" (click)="toggleSidebar()">StructuralDirectives-Component</a></li>
-      <li><a routerLink="/attribute-directives" (click)="toggleSidebar()">AttributeDirective-Component</a></li>
-      <li><a routerLink="/reactive-form" (click)="toggleSidebar()">ReactiveComponent</a></li>
-      <li><a routerLink="/template-form" (click)="toggleSidebar()">TemplateComponent</a></li>
-      <li><a routerLink="/pipes" (click)="toggleSidebar()">PipesComponent</a></li>
-      <li><a routerLink="/api-get" (click)="toggleSidebar()">ApiGetComponent</a></li>
-      <li><a routerLink="/parent" (click)="toggleSidebar()">ParentComponent</a></li>
+  <!-- Side-Nav -->
+  <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
+    <ul class="nav flex-column text-white w-100">
+      <a routerLink="/home" (click)="toggleSidebar()" class="nav-link h3 text-white my-2">Angular Learnings</a>
+      <li class="nav-link"><a routerLink="/home" (click)="toggleSidebar()">Home</a></li>
+      <li class="nav-link"><a routerLink="/one" (click)="toggleSidebar()">One-Component</a></li>
+      <li class="nav-link"><a routerLink="/two" (click)="toggleSidebar()">Two-Component</a></li>
+      <li class="nav-link"><a routerLink="/data-binding" (click)="toggleSidebar()">DataBinding-Component</a></li>
+      <li class="nav-link"><a routerLink="/structural-directives" (click)="toggleSidebar()">StructuralDirectives-Component</a></li>
+      <li class="nav-link"><a routerLink="/attribute-directives" (click)="toggleSidebar()">AttributeDirective-Component</a></li>
+      <li class="nav-link"><a routerLink="/reactive-form" (click)="toggleSidebar()">ReactiveComponent</a></li>
+      <li class="nav-link"><a routerLink="/template-form" (click)="toggleSidebar()">TemplateComponent</a></li>
+      <li class="nav-link"><a routerLink="/pipes" (click)="toggleSidebar()">PipesComponent</a></li>
+      <li class="nav-link"><a routerLink="/api-get" (click)="toggleSidebar()">ApiGetComponent</a></li>
+      <li class="nav-link"><a routerLink="/parent" (click)="toggleSidebar()">ParentComponent</a></li>
     </ul>
+
+    <span class="nav-link h4 w-100 mb-5">
+      <a href="mailto:sairaghavireddy30@gmail.com"><i class="bx bx-envelope text-white"></i></a>
+      <a href="https://github.com/mraghavi/Accion-Angular-Basics-training"><i class="bx bxl-github px-2 text-white"></i></a>
+    </span>
   </div>
 
-  <div class="container">
-    <router-outlet></router-outlet>
+  <!-- Main Wrapper -->
+  <div class="p-1 my-container active-cont d-flex flex-column">
+    <!-- Top Nav -->
+    <nav class="navbar top-navbar navbar-light bg-light px-5">
+      <button class="btn border-0" id="menu-btn" (click)="toggleSidebar()"><i class="bx bx-menu"></i></button>
+      <div class="nav-icons mx-auto">
+        <a routerLink="/about-me" class="nav-link"><i class="ri-user-line"></i> About Me</a>
+        <a routerLink="/contact" class="nav-link"><i class="ri-contacts-line"></i> Contact</a>
+        <a routerLink="/projects" class="nav-link"><i class="ri-folder-line"></i> Projects</a>
+      </div>
+      <img src="https://image4.owler.com/logo/accion-labs_owler_20200326_162720_large.png" alt="Logo" class="logo">
+    </nav>
+    <!--End Top Nav -->
+    <div class="container flex-grow-1">
+      <router-outlet></router-outlet>
+    </div>
+    <!-- Footer -->
+    <footer class="footer bg-light text-center py-3">
+      © 2024 Accion Labs. All rights reserved.
+    </footer>
   </div>
+
+  <!-- bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 </html>
-

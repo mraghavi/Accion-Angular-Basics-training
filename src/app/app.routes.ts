@@ -13,6 +13,9 @@ import { ApiGetComponent } from './components/api-get/api-get.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { AboutMeComponent } from './components/about-me/about-me.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 export const routes: Routes = [
     { 
@@ -35,7 +38,18 @@ export const routes: Routes = [
         path :'home',
         component: HomeComponent
     },
-    
+    { 
+        path: 'about-me', 
+        component: AboutMeComponent
+     },
+    { 
+        path: 'contact', 
+        component: ContactComponent 
+    },
+    {
+         path: 'projects', 
+         component: ProjectsComponent 
+        },
     {
         path :'one',
         component: OneComponent
