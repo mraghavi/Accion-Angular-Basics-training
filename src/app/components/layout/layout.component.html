@@ -37,26 +37,26 @@
   <!-- Main Wrapper -->
   <div class="p-1 my-container active-cont d-flex flex-column">
     <!-- Top Nav -->
-    <nav class="navbar top-navbar navbar-light bg-light px-5">
+    <nav class="navbar top-navbar navbar-light bg-light px-5 d-flex align-items-center justify-content-between">
       <button class="btn border-0" id="menu-btn" (click)="toggleSidebar()"><i class="bx bx-menu"></i></button>
-      <div class="nav-icons mx-auto">
+      <div class="nav-icons mx-auto d-flex gap-4">
         <a routerLink="/about-me" class="nav-link"><i class="ri-user-line"></i> About Me</a>
         <a routerLink="/contact" class="nav-link"><i class="ri-contacts-line"></i> Contact</a>
         <a routerLink="/projects" class="nav-link"><i class="ri-folder-line"></i> Projects</a>
       </div>
       <img src="https://image4.owler.com/logo/accion-labs_owler_20200326_162720_large.png" alt="Logo" class="logo">
     </nav>
-    <!--End Top Nav -->
+    <!-- End Top Nav -->
+
     <div class="container flex-grow-1">
       <router-outlet></router-outlet>
     </div>
+
     <!-- Footer -->
-    <footer class="footer bg-light text-center py-3">
+    <footer class="footer text-center py-3">
       © 2024 Accion Labs. All rights reserved.
     </footer>
   </div>
 
-  <!-- bootstrap js -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 </html>

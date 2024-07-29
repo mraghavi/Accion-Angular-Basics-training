@@ -1,0 +1,143 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle, #ffffff, #b2b9bd);
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .intro-text {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 50px 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    animation: fadeIn 2s ease-in-out;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .intro-text:before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
+    background: linear-gradient(45deg, #b2b9bd, #ffffff, #ffffff);
+    background-size: 400%;
+    border-radius: 15px;
+    filter: blur(60px);
+    z-index: -1;
+    animation: gradientAnimation 8s infinite;
+  }
+  
+  .greeting {
+    color: #e64d55;
+    font-size: 4rem;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    animation: slideInLeft 1.5s ease-in-out;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .intro-text h2 {
+    color: #67747c;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    animation: slideInLeft 1.5s ease-in-out;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .intro-text p {
+    color: #69717d;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    animation: slideInRight 1.5s ease-in-out;
+  }
+  
+  .btn-primary {
+    background-color: #e64d55;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: buttonPulse 2s infinite;
+  }
+  
+  .btn-primary:hover {
+    background-color: #ffffff;
+    color: #e64d55;
+    border: 2px solid #e64d55;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes buttonPulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+      transform: scale(1.1);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  @keyframes gradientAnimation {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  

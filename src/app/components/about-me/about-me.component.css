@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%; /* Ensure body takes full viewport height */
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light background color for the whole page */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  
+  .about-container {
+    background-color: #ffffff; /* White background for the container */
+    padding: 40px;
+    max-width: 100000px; /* Increased max-width for a more expansive look */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    margin: 0 auto; /* Center container horizontally */
+  }
+  
+  .header {
+    background-color: #e64d55; /* Vibrant color for the header */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem; /* Adjusted font size for better scaling */
+    margin-bottom: 10px;
+  }
+  
+  .header p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .profile-img {
+    width: 150px; /* Adjusted size for better proportion */
+    height: 150px;
+    border-radius: 50%;
+    margin: 20px 0;
+    border: 4px solid #e64d55; /* Matching border color */
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .description strong {
+    color: #e64d55; /* Highlighted text color */
+  }
+  
+  .btn-primary {
+    background-color: #e64d55; /* Consistent button color */
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px; /* Adjusted padding for better appearance */
+    font-size: 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #c62839; /* Slightly darker color for hover */
+  }
+  
+  .header p {
+    color: #ffffff; /* White color for the header text */
+  }
+  
