@@ -12,7 +12,6 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class LayoutComponent {
   title = 'Basics';
-
   toggleSidebar(): void {
     const sidebar = document.querySelector("#sidebar") as HTMLElement;
     const container = document.querySelector(".my-container") as HTMLElement;
@@ -21,4 +20,5 @@ export class LayoutComponent {
       container.classList.toggle("active-cont");
     }
   }
+  
 }

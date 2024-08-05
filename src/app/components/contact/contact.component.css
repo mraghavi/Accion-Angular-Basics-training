@@ -1,0 +1,134 @@
+section {
+  padding: 60px 0;
+  min-height: 100vh;
+}
+
+.contact-info {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact-info-icon {
+  margin-bottom: 15px;
+}
+
+.contact-info-item {
+  background: #a4acb0; /* Dark Gray */
+  padding: 30px 0px;
+}
+
+.contact-page-sec .contact-page-form h2 {
+  color: #67747c; /* Dark Gray */
+  text-transform: capitalize;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.contact-page-form .col-md-6.col-sm-6.col-xs-12 {
+  padding-left: 0;
+}
+
+.contact-page-form.contact-form input {
+  margin-bottom: 5px;
+}
+
+.contact-page-form.contact-form textarea {
+  height: 110px;
+}
+
+.contact-page-form.contact-form input[type="submit"] {
+  background: #67747c; /* Dark Gray */
+  width: 150px;
+  border-color: #67747c; /* Dark Gray */
+}
+
+.contact-info-icon i {
+  font-size: 48px;
+  color: #e64d55; /* Red */
+}
+
+.contact-info-text p {
+  margin-bottom: 0px;
+}
+
+.contact-info-text h2 {
+  color: #ffffff; /* White */
+  font-size: 22px;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.contact-info-text span {
+  color: #ffffff; /* Light Gray */
+  font-size: 16px;
+  display: inline-block;
+  width: 100%;
+}
+
+.contact-page-form input {
+  background: #f9f9f9;
+  border: 1px solid #f9f9f9;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.contact-page-form .message-input {
+  display: inline-block;
+  width: 100%;
+  padding-left: 0;
+}
+
+.single-input-field textarea {
+  background: #f9f9f9;
+  border: 1px solid #f9f9f9;
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+  border-radius: 4px;
+}
+
+.single-input-fieldsbtn input[type="submit"] {
+  background: #e64d55; /* Red */
+  color: #ffffff; /* White */
+  display: inline-block;
+  font-weight: 600;
+  padding: 10px 0;
+  text-transform: capitalize;
+  width: 150px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.single-input-fieldsbtn input[type="submit"]:hover {
+  background: #67747c; /* Dark Gray */
+  transition: all 0.4s ease-in-out 0s;
+  border-color: #67747c; /* Dark Gray */
+}
+
+.single-input-field h4 {
+  color: #464646;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+.contact-page-form {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+}
+
+.contact-page-form input.ng-invalid.ng-touched,
+.contact-page-form textarea.ng-invalid.ng-touched {
+  border-color: #e64d55; /* Red */
+}
+
+.error-message {
+  color: #e64d55; /* Red */
+  font-size: 12px;
+  margin-top: 5px;
+}

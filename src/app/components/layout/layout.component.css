@@ -1,8 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Existing CSS */
 
 body {
   min-height: 100vh;
@@ -17,6 +13,7 @@ body {
   margin-left: -300px;
   background-color: #67747c;
   transition: 0.5s;
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .nav-link:active,
@@ -32,6 +29,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin-top: 60px; /* Adjust this value based on your navbar height */
 }
 
 .active-nav {
@@ -78,12 +76,19 @@ body {
   color: #e64d55;
 }
 
+/* Fixed Top Navbar */
 .top-navbar {
   background-color: #b2b9bd;
   border-bottom: 2px solid #67747c;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed; /* Keep the navbar fixed */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it is above other content */
+  padding: 0 20px; /* Adjust padding if needed */
 }
 
 .top-navbar .logo {
@@ -108,7 +113,7 @@ body {
 }
 
 .nav-icons .nav-link:hover {
-  color: #e64d55;
+  color: #fdfdfd;
 }
 
 .container {
@@ -117,11 +122,20 @@ body {
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   flex-grow: 1;
+  margin-bottom: 60px; /* Add space for the footer */
 }
 
+/* Fixed Footer */
 footer.footer {
   background-color: #b2b9bd;
   color: #67747c;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it is above other content */
+  padding: 10px 0;
+  text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {

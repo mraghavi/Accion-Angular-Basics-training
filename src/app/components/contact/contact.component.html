@@ -1,1 +1,130 @@
-<p>contact works!</p>
+<section class="contact-page-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-map-marked"></i>
+            </div>
+            <div class="contact-info-text">
+              <h2>Address</h2>
+              <span>Jyothi Pinnacle, Hitech City Rd, Laxmi Cyber City, Whitefields, Kondapur</span>
+              <span>Telangana 500081, INDIA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-info-text">
+              <h2>E-mail</h2>
+              <span>sairaghavireddy30&#64;gmail.com</span>
+              <span>ms.sairaghavi&#64;accionlabs.com</span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-info-text">
+              <h2>Office Time</h2>
+              <span>Mon - Thu 9:00 am - 4:00 pm</span>
+              <span>Fri - Sun 10:00 am - 5:00 pm</span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="contact-page-form">
+          <h2>Get in Touch</h2>
+          <form [formGroup]="reactiveForm" >
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="single-input-field">
+                  <input formControlName="name" type="text" placeholder="Your Name"/>
+                  <div class="error-message">
+                    @if(reactiveForm.controls['name'].errors?.['required']){
+                      <span>This is required</span>
+                    } 
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="single-input-field">
+                  <input formControlName="email" type="email" placeholder="E-mail"/>
+                  <div class="error-message">
+                    @if(reactiveForm.controls['email'].errors?.['required']){
+                      <span>This is required</span>
+                    } @else if(reactiveForm.controls['email'].errors?.['email']){
+                      <span>not in email format</span>
+                    }
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="single-input-field">
+                  <input formControlName="phoneNumber" type="text" placeholder="Phone Number" />
+                  <div class="error-message">
+                  @if(reactiveForm.controls['phoneNumber'].errors?.['required']){
+                    <span>This is required</span>
+                  } 
+                   @else if(reactiveForm.controls['phoneNumber'].errors?.['pattern']){
+                    <span>only numbers please!</span>
+                  }
+                  @else if(reactiveForm.controls['phoneNumber'].errors?.['minlength']){
+                    <span> min 10 numbers</span>
+                  }
+                  @else if (reactiveForm.controls[' phoneNumber'].errors?.['maxlength']){
+                    <span>not more than 10 numbers</span>
+                  }
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="single-input-field">
+                  <input formControlName="subject" type="text" placeholder="Subject"/>
+                  <div  class="error-message">
+                  @if(reactiveForm.controls['email'].errors?.['required']){
+                    <span>This is required</span>}
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 message-input">
+                <div class="single-input-field">
+                  <textarea formControlName="message" placeholder="Write Your Message"></textarea>
+                  <div  class="error-message">
+                    @if(reactiveForm.controls['message'].errors?.['required']){
+                      <span>This is required</span>
+                    } 
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="single-input-fieldsbtn">
+                <input type="submit" value="Send Now" [disabled]="reactiveForm.invalid" (ngSubmit)="onSubmit()"/>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="contact-page-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.039862324558!2d78.36638697493646!3d17.457806083441444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93cf17698d37%3A0x251c961e0ceb6e2b!2sJyothi%20Pinnacle!5e0!3m2!1sen!2sin!4v1722843585698!5m2!1sen!2sin" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

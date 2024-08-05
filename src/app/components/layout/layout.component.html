@@ -12,30 +12,30 @@
 
 <body>
   <!-- Side-Nav -->
-  <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
+  <div class="side-navbar active-nav d-flex flex-column" id="sidebar">
     <ul class="nav flex-column text-white w-100">
-      <a routerLink="/home" (click)="toggleSidebar()" class="nav-link h3 text-white my-2">Angular Learnings</a>
-      <li class="nav-link"><a routerLink="/home" (click)="toggleSidebar()">Home</a></li>
-      <li class="nav-link"><a routerLink="/one" (click)="toggleSidebar()">One-Component</a></li>
-      <li class="nav-link"><a routerLink="/two" (click)="toggleSidebar()">Two-Component</a></li>
-      <li class="nav-link"><a routerLink="/data-binding" (click)="toggleSidebar()">DataBinding-Component</a></li>
-      <li class="nav-link"><a routerLink="/structural-directives" (click)="toggleSidebar()">StructuralDirectives-Component</a></li>
-      <li class="nav-link"><a routerLink="/attribute-directives" (click)="toggleSidebar()">AttributeDirective-Component</a></li>
-      <li class="nav-link"><a routerLink="/reactive-form" (click)="toggleSidebar()">ReactiveComponent</a></li>
-      <li class="nav-link"><a routerLink="/template-form" (click)="toggleSidebar()">TemplateComponent</a></li>
-      <li class="nav-link"><a routerLink="/pipes" (click)="toggleSidebar()">PipesComponent</a></li>
-      <li class="nav-link"><a routerLink="/api-get" (click)="toggleSidebar()">ApiGetComponent</a></li>
-      <li class="nav-link"><a routerLink="/parent" (click)="toggleSidebar()">ParentComponent</a></li>
+      <a routerLink="/home" (click)="toggleSidebar()" class="nav-link h3 text-dark my-2">Angular Learnings</a>
+      <li class="nav-link"><a routerLink="/home" (click)="toggleSidebar()" class="text-dark">Home</a></li>
+      <li class="nav-link"><a routerLink="/one" (click)="toggleSidebar()" class="text-dark">One-Component</a></li>
+      <li class="nav-link"><a routerLink="/two" (click)="toggleSidebar()" class="text-dark">Two-Component</a></li>
+      <li class="nav-link"><a routerLink="/data-binding" (click)="toggleSidebar()" class="text-dark">DataBinding-Component</a></li>
+      <li class="nav-link"><a routerLink="/structural-directives" (click)="toggleSidebar()" class="text-dark">StructuralDirectives-Component</a></li>
+      <li class="nav-link"><a routerLink="/attribute-directives" (click)="toggleSidebar()" class="text-dark">AttributeDirective-Component</a></li>
+      <li class="nav-link"><a routerLink="/reactive-form" (click)="toggleSidebar()" class="text-dark">ReactiveComponent</a></li>
+      <li class="nav-link"><a routerLink="/template-form" (click)="toggleSidebar()" class="text-dark">TemplateComponent</a></li>
+      <li class="nav-link"><a routerLink="/pipes" (click)="toggleSidebar()" class="text-dark">PipesComponent</a></li>
+      <li class="nav-link"><a routerLink="/api-get" (click)="toggleSidebar()" class="text-dark">ApiGetComponent</a></li>
+      <li class="nav-link"><a routerLink="/parent" (click)="toggleSidebar()" class="text-dark">ParentComponent</a></li>
     </ul>
 
     <span class="nav-link h4 w-100 mb-5">
-      <a href="mailto:sairaghavireddy30@gmail.com"><i class="bx bx-envelope text-white"></i></a>
-      <a href="https://github.com/mraghavi/Accion-Angular-Basics-training"><i class="bx bxl-github px-2 text-white"></i></a>
+      <a href="mailto:sairaghavireddy30@gmail.com"><i class="bx bx-envelope text-dark"></i></a>
+      <a href="https://github.com/mraghavi/Accion-Angular-Basics-training"><i class="bx bxl-github px-2 text-dark"></i></a>
     </span>
   </div>
 
   <!-- Main Wrapper -->
-  <div class="p-1 my-container active-cont d-flex flex-column">
+  <div class="p-1 my-container active-cont">
     <!-- Top Nav -->
     <nav class="navbar top-navbar navbar-light bg-light px-5 d-flex align-items-center justify-content-between">
       <button class="btn border-0" id="menu-btn" (click)="toggleSidebar()"><i class="bx bx-menu"></i></button>
@@ -57,6 +57,5 @@
       © 2024 Accion Labs. All rights reserved.
     </footer>
   </div>
-
 </body>
 </html>

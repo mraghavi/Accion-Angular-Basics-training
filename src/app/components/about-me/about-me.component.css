@@ -1,91 +1,211 @@
+/* src/styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Roboto:wght@300;400&display=swap');
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html, body {
-    height: 100%; /* Ensure body takes full viewport height */
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa; /* Light background color for the whole page */
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-  }
-  
-  .about-container {
-    background-color: #ffffff; /* White background for the container */
-    padding: 40px;
-    max-width: 100000px; /* Increased max-width for a more expansive look */
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    margin: 0 auto; /* Center container horizontally */
-  }
-  
-  .header {
-    background-color: #e64d55; /* Vibrant color for the header */
-    color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-  }
-  
-  .header h1 {
-    font-size: 2.5rem; /* Adjusted font size for better scaling */
-    margin-bottom: 10px;
-  }
-  
-  .header p {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-  
-  .profile-img {
-    width: 150px; /* Adjusted size for better proportion */
-    height: 150px;
-    border-radius: 50%;
-    margin: 20px 0;
-    border: 4px solid #e64d55; /* Matching border color */
-  }
-  
-  .description {
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 30px;
-  }
-  
-  .description strong {
-    color: #e64d55; /* Highlighted text color */
-  }
-  
-  .btn-primary {
-    background-color: #e64d55; /* Consistent button color */
-    color: #ffffff;
-    border: none;
-    padding: 12px 24px; /* Adjusted padding for better appearance */
-    font-size: 1.2rem;
-    border-radius: 6px;
-    text-decoration: none;
-  }
-  
-  .btn-primary:hover {
-    background-color: #c62839; /* Slightly darker color for hover */
-  }
-  
-  .header p {
-    color: #ffffff; /* White color for the header text */
-  }
-  
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  background-color: var(--lightGray);
+}
+
+:root {
+  --mainColor: #67747c; /* Dark Gray */
+  --textColor: #69717d; /* Gray */
+  --bgColor: #ffffff;   /* White */
+  --highlightColor: #e64d55; /* Red */
+  --lightGray: #b2b9bd; /* Light Gray */
+  --glamourFont: 'Raleway', sans-serif;
+  --glamourSubFont: 'Roboto', sans-serif;
+}
+/* src/app/card/card.component.css */
+.card {
+  background-color: #a4acb0;
+  margin: 60px auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 8px 8px var(--textColor), -4px 7px 8px var(--textColor);
+  border-radius: 10px;
+}
+
+.container {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.someone {
+  display: flex;
+  align-items: center;
+}
+
+.someone img {
+  background-color: var(--bgColor);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.someone .text {
+  padding-left: 20px;
+}
+
+.someone .text h1 {
+  font-size: 28px;
+  color: var(--mainColor);
+  margin: 0;
+  font-weight: 700;
+  font-family: var(--glamourFont);
+}
+
+.someone .text p {
+  font-size: 18px;
+  color: var(--textColor);
+  margin: 5px 0 0;
+  font-family: var(--glamourSubFont);
+  text-shadow: 1px 1px 2px #00000050;
+}
+
+.follow-me {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.follow-me p {
+  font-size: 18px;
+  color: var(--textColor);
+  margin: 0 0 10px;
+  font-family: var(--glamourFont);
+}
+
+.follow-me ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.follow-me ul li {
+  background-color: var(--bgColor);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  transition: background-color 0.3s;
+}
+
+.follow-me ul li:hover {
+  background-color: var(--highlightColor);
+}
+
+.follow-me ul li i {
+  color: var(--mainColor);
+  font-size: 20px;
+}
+
+.follow-me ul li i:hover {
+  color: var(--bgColor);
+}
+/* src/app/about/about.component.css */
+.about {
+  width: 80%;
+  margin: 20px auto;
+  background-color: rgb(248, 191, 191);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 4px 8px 8px var(--textColor), -4px 7px 8px var(--textColor);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.img {
+  flex: 1;
+  text-align: left;
+}
+
+.img img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.who {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+
+.who h1 {
+  font-size: 28px;
+  color: rgb(0, 0, 0);
+  position: relative;
+  margin-bottom: 20px;
+  font-family: var(--glamourFont);
+  text-shadow: 2px 2px 4px #00000050;
+}
+
+.who h1::after {
+  content: '';
+  width: 110px;
+  height: 2px;
+  background-color: #67747c;
+  position: absolute;
+  top: 36px;
+  left: 0;
+}
+
+.who h1::before {
+  content: '';
+  width: 44px;
+  height: 12px;
+  border-radius: 20px;
+  background-color: #67747c;
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+
+.who p {
+  white-space: pre-line;
+  line-height: 1.5;
+  padding: 30px 0;
+  font-size: 18px;
+  color: #202121;
+  font-family: var(--glamourSubFont);
+  text-shadow: 1px 1px 2px #00000050;
+}
+
+.who span {
+  padding-top: 10px;
+  font-size: 18px;
+  color: #18191a;
+  font-family: var(--glamourSubFont);
+  text-shadow: 1px 1px 2px #00000050;
+}
+/* src/app/app.component.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
