@@ -1,61 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Angular Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
-  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="./layout.component.css" />
-</head>
+<!-- menghubungkan cdn js icon font awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 
-<body>
-  <!-- Side-Nav -->
-  <div class="side-navbar active-nav d-flex flex-column" id="sidebar">
-    <ul class="nav flex-column text-white w-100">
-      <a routerLink="/home" (click)="toggleSidebar()" class="nav-link h3 text-dark my-2">Angular Learnings</a>
-      <li class="nav-link"><a routerLink="/home" (click)="toggleSidebar()" class="text-dark">Home</a></li>
-      <li class="nav-link"><a routerLink="/one" (click)="toggleSidebar()" class="text-dark">One-Component</a></li>
-      <li class="nav-link"><a routerLink="/two" (click)="toggleSidebar()" class="text-dark">Two-Component</a></li>
-      <li class="nav-link"><a routerLink="/data-binding" (click)="toggleSidebar()" class="text-dark">DataBinding-Component</a></li>
-      <li class="nav-link"><a routerLink="/structural-directives" (click)="toggleSidebar()" class="text-dark">StructuralDirectives-Component</a></li>
-      <li class="nav-link"><a routerLink="/attribute-directives" (click)="toggleSidebar()" class="text-dark">AttributeDirective-Component</a></li>
-      <li class="nav-link"><a routerLink="/reactive-form" (click)="toggleSidebar()" class="text-dark">ReactiveComponent</a></li>
-      <li class="nav-link"><a routerLink="/template-form" (click)="toggleSidebar()" class="text-dark">TemplateComponent</a></li>
-      <li class="nav-link"><a routerLink="/pipes" (click)="toggleSidebar()" class="text-dark">PipesComponent</a></li>
-      <li class="nav-link"><a routerLink="/api-get" (click)="toggleSidebar()" class="text-dark">ApiGetComponent</a></li>
-      <li class="nav-link"><a routerLink="/parent" (click)="toggleSidebar()" class="text-dark">ParentComponent</a></li>
-    </ul>
-
-    <span class="nav-link h4 w-100 mb-5">
-      <a href="mailto:sairaghavireddy30@gmail.com"><i class="bx bx-envelope text-dark"></i></a>
-      <a href="https://github.com/mraghavi/Accion-Angular-Basics-training"><i class="bx bxl-github px-2 text-dark"></i></a>
-    </span>
-  </div>
-
-  <!-- Main Wrapper -->
-  <div class="p-1 my-container active-cont">
-    <!-- Top Nav -->
-    <nav class="navbar top-navbar navbar-light bg-light px-5 d-flex align-items-center justify-content-between">
-      <button class="btn border-0" id="menu-btn" (click)="toggleSidebar()"><i class="bx bx-menu"></i></button>
-      <div class="nav-icons mx-auto d-flex gap-4">
-        <a routerLink="/about-me" class="nav-link"><i class="ri-user-line"></i> About Me</a>
-        <a routerLink="/contact" class="nav-link"><i class="ri-contacts-line"></i> Contact</a>
-        <a routerLink="/projects" class="nav-link"><i class="ri-folder-line"></i> Projects</a>
-      </div>
-      <img src="https://image4.owler.com/logo/accion-labs_owler_20200326_162720_large.png" alt="Logo" class="logo">
-    </nav>
-    <!-- End Top Nav -->
-
-    <div class="container flex-grow-1">
-      <router-outlet></router-outlet>
+<!-- nav-link start -->
+<nav class="nav-link">
+  <!-- brand-logo start -->
+  <div class="brand-logo">
+    <!-- icon hamburger menu -->
+    <div class="toggle-menu">
+      <i class="fa-solid fa-bars btn-open"></i>
+      <i class="fa-solid fa-close btn-close"></i>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer text-center py-3">
-      © 2024 Accion Labs. All rights reserved.
-    </footer>
+    <!-- nama website atau logo -->
+    <a href="#" class="logo-container">
+      <img src="https://image4.owler.com/logo/accion-labs_owler_20200326_162720_large.png" alt="Accion Labs Logo" class="logo-image">
+    </a>
+    <!-- Navigation Icons -->
+    <div class="nav-icons">
+      <a href="path/to/resume" target="_blank"><i class="fa-solid fa-file"></i></a>
+      <a href="mailto:sairaghavireddy30@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/sai-raghavi-reddy-488b65202/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/mraghavi/Accion-Angular-Basics-training" target="_blank"><i class="fa-brands fa-github"></i></a>
+    </div>
+    <!-- Log Out Button -->
+    <div class="logout-button">
+      <button routerLink="/login"><i class="fa-solid fa-sign-out-alt"></i> Log Out</button>
+    </div>
   </div>
-</body>
-</html>
+  <!-- brand-logo end -->
+
+  <!-- item navigasi saat lebar area hanya diberi jarak oleh padding -->
+  <ul class="toggle-nav-item">
+    <a routerLink="/home">
+      <li><i class="fa-solid fa-house"></i></li>
+    </a>
+    <a routerLink="/about-me">
+      <li><i class="fa-solid fa-user"></i></li>
+    </a>
+    <a routerLink="/projects">
+      <li><i class="fa-solid fa-folder"></i></li>
+    </a>
+    <a routerLink="/contact">
+      <li><i class="fa-solid fa-address-book"></i></li>
+    </a>
+  </ul>
+
+  <!-- item navigasi saat lebar area diberi ukuran yang lebih besar atau ketika hamburger menu di klik -->
+  <ul class="full-nav-item">
+    <a routerLink="/home">
+      <li><i class="fa-solid fa-house"></i> Home</li>
+    </a>
+    <a routerLink="/about-me">
+      <li><i class="fa-solid fa-user"></i> About</li>
+    </a>
+    <a routerLink="/projects">
+      <li><i class="fa-solid fa-folder"></i> Project</li>
+    </a>
+    <a routerLink="/contact">
+      <li><i class="fa-solid fa-address-book"></i> Contact</li>
+    </a>
+  </ul>
+</nav>
+<!-- nav-link end -->
+
+<!-- contoh tampilan content di area selain navigation bar -->
+<header class="wrapper-header">
+  <div class="container flex-grow-1">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- footer text -->
+  <footer>
+    <h4>&copy; 2024 Accion Labs. All rights reserved.
+    </h4>
+  </footer>
+</header>

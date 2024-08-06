@@ -1,143 +1,111 @@
-.home-container {
-    display: flex;
-    justify-content: center;
+.content {
+  height: calc(100vh - 80px); /* Adjust for nav height */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vw;
+  box-sizing: border-box;
+}
+
+.left {
+  width: 55%;
+  padding: 4vw 0;
+}
+
+.left h1 {
+  text-transform: capitalize;
+  font-size: 2.2rem;
+  padding: 0.5rem 0;
+  letter-spacing: 2px;
+  color: #333;
+}
+
+.left span {
+  color: #e64d55;
+}
+
+.left p {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  color: #555;
+  width: 90%;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.left button {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  background-color: #e64d55;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.left button:hover {
+  background-color: #d43f4f;
+}
+
+.right {
+  width: 45%;
+}
+
+.right img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .content {
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
-    background: radial-gradient(circle, #ffffff, #b2b9bd);
+    padding: 0 2vw;
+  }
+
+  .left {
+    width: 100%;
+    padding: 3vw 0;
     text-align: center;
-    padding: 20px;
-    overflow: hidden;
-    position: relative;
   }
-  
-  .intro-text {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 50px 30px;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    max-width: 700px;
-    animation: fadeIn 2s ease-in-out;
-    text-align: center;
-    backdrop-filter: blur(8px);
-    position: relative;
-    z-index: 1;
+
+  .left h1 {
+    font-size: 1.5rem;
+    padding: 1rem 0;
   }
-  
-  .intro-text:before {
-    content: '';
-    position: absolute;
-    top: -30%;
-    left: -30%;
-    width: 160%;
-    height: 160%;
-    background: linear-gradient(45deg, #b2b9bd, #ffffff, #ffffff);
-    background-size: 400%;
-    border-radius: 15px;
-    filter: blur(60px);
-    z-index: -1;
-    animation: gradientAnimation 8s infinite;
+
+  .left p {
+    font-weight: 600;
+    line-height: 1.5;
+    color: #666;
+    width: 90%;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
   }
-  
-  .greeting {
-    color: #e64d55;
-    font-size: 4rem;
-    margin-bottom: 10px;
-    font-family: 'Playfair Display', serif;
-    animation: slideInLeft 1.5s ease-in-out;
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .intro-text h2 {
-    color: #67747c;
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    font-family: 'Playfair Display', serif;
-    animation: slideInLeft 1.5s ease-in-out;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  .intro-text p {
-    color: #69717d;
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-    animation: slideInRight 1.5s ease-in-out;
-  }
-  
-  .btn-primary {
+
+  .left button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
     background-color: #e64d55;
-    color: #ffffff;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    display: inline-block;
-    margin-top: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    animation: buttonPulse 2s infinite;
+    color: #fff;
+    box-shadow: 0px 0px 0.5rem rgba(0, 0, 0, 0.2);
   }
-  
-  .btn-primary:hover {
-    background-color: #ffffff;
-    color: #e64d55;
-    border: 2px solid #e64d55;
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
-    transform: scale(1.05);
+
+  .right {
+    width: 100%;
+    margin-top: 1rem;
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+  .right img {
+    width: 100%;
+    height: auto;
   }
-  
-  @keyframes slideInLeft {
-    from {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideInRight {
-    from {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes buttonPulse {
-    0%, 100% {
-      transform: scale(1);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    }
-    50% {
-      transform: scale(1.1);
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
-    }
-  }
-  
-  @keyframes gradientAnimation {
-    0%, 100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-  }
-  
+}
