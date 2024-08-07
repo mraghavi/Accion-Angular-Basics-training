@@ -12,19 +12,29 @@ import { RouterLink } from '@angular/router';
 })
 export class StructuralDirectivesComponent {
 
-  isboxvisible: boolean = true
-  istoggle: boolean = true
-  isswitch: boolean = true
-  onBox1(){
-    this.isboxvisible = true;
+  currentSection: string = 'introduction';
+  isBoxVisible: boolean = true;
+  isToggle: boolean = true;
+
+  workers: string[] = ['worker 1', 'worker 2', 'worker 3', 'worker 4', 'worker 5'];
+
+  showSection(section: string) {
+    this.currentSection = section;
   }
-  offBox1(){
-    this.isboxvisible = false;
+
+  onBox1() {
+    this.isBoxVisible = true;
   }
-  toggle(){
-    this.istoggle = !this.istoggle;
+
+  offBox1() {
+    this.isBoxVisible = false;
   }
-  switch(){
-this.isswitch = true;
+
+  toggle() {
+    this.isToggle = !this.isToggle;
+  }
+  constructor() { }
+
+  ngOnInit(): void {
   }
 }

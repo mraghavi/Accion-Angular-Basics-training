@@ -1,13 +1,74 @@
+<!-- app.component.html -->
 
-<div *ngIf="isboxvisible" class="directves" id="Box1">
-    <h2>Box1</h2>
-</div>
-
-<div *ngIf="istoggle" class="directves" id="Box3">
-    <h2>Box3</h2>
-</div>
-
-<button class="button_one" (click)="onBox1()" id="onButton">On</button>
-<button class="button_two"(click)="offBox1()" id="offButton">Off</button>
-<button class="toggle"(click)="toggle()" id="toggle">toggle</button>
-<button class="switch" (click)="switch()" id="switch" [routerLink] = "['/attribute-directives']">switch to attribute-directives</button>
+<nav>
+    <ul>
+      <li><a (click)="showSection('introduction')">Introduction</a></li>
+      <li><a (click)="showSection('ngif')">*ngIf Directive</a></li>
+      <li><a (click)="showSection('ngfor')">*ngFor Directive</a></li>
+      <li><a (click)="showSection('usage')">When to Use</a></li>
+    </ul>
+  </nav>
+  
+  <div class="content">
+    <section *ngIf="currentSection === 'introduction'">
+      <h1>What Are Angular Structural Directives?</h1>
+      <p>Angular structural directives change the structure of the DOM. They can add, remove, or replace elements, and are prefixed with an asterisk (*).</p>
+      <p>Three standard structural directives in Angular:</p>
+      <ul>
+        <li><strong>*ngIf</strong> – Conditionally includes a template based on a Boolean expression.</li>
+        <li><strong>*ngFor</strong> – Iterates over an array.</li>
+      </ul>
+    </section>
+  
+    <section *ngIf="currentSection === 'ngif'">
+      <h1>How to Use the *ngIf Directive</h1>
+      <p>The <strong>*ngIf</strong> directive displays or removes an element based on a condition, similar to if-else statements in other languages.</p>
+      <p>If the expression is false, *ngIf removes the element; if true, it adds the element to the DOM.</p>
+      <h2>Example of *ngIf:</h2>
+      <pre><code class="language-html">
+        &lt;div *ngIf="isBoxVisible"&gt;&lt;/div&gt;
+        &lt;div class="button-group"&gt;
+          &lt;button class="btn" (click)="onBox1()"&gt;On&lt;/button&gt;
+          &lt;button class="btn" (click)="offBox1()"&gt;Off&lt;/button&gt;
+          &lt;button class="btn" (click)="toggle()"&gt;Toggle&lt;/button&gt;
+        &lt;/div&gt;
+      </code></pre>
+      
+      <div class="example">
+        <div *ngIf="isBoxVisible" class="directive-box" id="Box1">
+          <h2>Box 1</h2>
+        </div>
+        <div *ngIf="isToggle" class="directive-box" id="Box3">
+          <h2>Box 3</h2>
+        </div>
+        <div class="button-group">
+          <button class="btn" (click)="onBox1()">On</button>
+          <button class="btn" (click)="offBox1()">Off</button>
+          <button class="btn" (click)="toggle()">Toggle</button>
+        </div>
+      </div>
+    </section>
+  
+    <section *ngIf="currentSection === 'ngfor'">
+      <h1>How to Use the *ngFor Directive</h1>
+      <p>The <strong>*ngFor</strong> directive iterates over array values, similar to a for loop in other languages.</p>
+      <h2>Example of *ngFor:</h2>
+      <pre><code class="language-html">
+        &lt;ul&gt;
+          &lt;li *ngFor="let worker of workers"&gt;<p ngNonBindable>{{ workers }}</p>/li&gt;
+        &lt;/ul&gt;
+       
+      </code></pre>
+      <ul>
+        <p>&lcub;Example&rcub;</p>
+        <li *ngFor="let worker of workers">{{ worker }}</li>
+      </ul>
+    </section>
+  
+    <section *ngIf="currentSection === 'usage'">
+      <h1>When Should You Use Angular Structural Directives?</h1>
+      <p>Use structural directives to add or remove elements from the DOM, change styles, add event listeners, or create new elements.</p>
+      <p>In short, whenever you need to manipulate the DOM, consider using a structural directive.</p>
+    </section>
+  </div>
+  
