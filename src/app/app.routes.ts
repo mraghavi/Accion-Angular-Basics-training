@@ -16,6 +16,8 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { RoutesComponent } from './components/routes/routes.component';
+import { ServiceComponent } from './components/service/service.component';
 
 export const routes: Routes = [
     { 
@@ -95,6 +97,16 @@ export const routes: Routes = [
         component: ParentComponent
    
     },
+    {
+        path :'routes',
+        component: RoutesComponent
+   
+    },
+    {
+        path :'services',
+        component: ServiceComponent
+   
+    }
    
 ]
     },

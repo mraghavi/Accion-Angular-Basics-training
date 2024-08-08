@@ -1,0 +1,32 @@
+.button-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row; /* Arrange buttons horizontally */
+    justify-content: center; /* Center align buttons horizontally */
+  }
+  
+  .button-list li {
+    margin: 0 10px; /* Spacing between buttons */
+  }
+  
+  .button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #e64d55; /* Red color */
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    width: 120px; /* Set a fixed width for uniform button size */
+    height: 40px; /* Set a fixed height for uniform button size */
+  }
+  
+  .button:hover {
+    background-color: #c43c40; /* Darker red on hover */
+  }
+  

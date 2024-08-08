@@ -1,0 +1,90 @@
+/* General styles for a glamorous look */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.text-primary {
+  color: #e64d55;
+}
+
+.text-success {
+  color: #28a745;
+}
+
+.text-warning {
+  color: #ffc107;
+}
+
+.text-info {
+  color: #17a2b8;
+}
+
+.display-4 {
+  font-size: 3.5rem;
+  font-weight: 300;
+}
+
+.display-5 {
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.display-6 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.bg-light {
+  background-color: #f9f9f9;
+}
+
+.border-primary {
+  border-color: #e64d55 !important;
+}
+
+.border-warning {
+  border-color: #ffc107 !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 0 1rem rgba(0,0,0,0.1);
+}
+
+.shadow-sm {
+  box-shadow: 0 0 0.5rem rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+  background-color: #e64d55;
+  border: none;
+  padding: 0.75rem 1.25rem;
+}
+
+.btn-primary:hover {
+  background-color: #d43f4d;
+}
+
+.list-group-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.list-group-item:hover {
+  background-color: #e9ecef;
+}
+
+.pre {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ddd;
+}
+
+.form-control, .form-check-input, .form-check-label {
+  border-radius: 0.25rem;
+}
+
+.font-weight-bold {
+  font-weight: 700;
+}

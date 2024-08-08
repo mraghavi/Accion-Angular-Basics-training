@@ -1,74 +1,127 @@
-<form [formGroup]="reactiveForm" >
+<div class="container my-5">
+  <!-- Blog Post Header -->
+  <h1 class="text-center text-primary mb-4 display-4">✨Angular Reactive Forms ✨</h1>
+  <p class="lead text-center mb-4">
+    Reactive forms in Angular offer a powerful and flexible way to manage form inputs, especially for complex scenarios. 
+    Let’s dive deep into understanding how to use reactive forms effectively.
+  </p>
+
+  <!-- Key Concepts Section -->
+  <h2 class="text-success mt-5 display-5">🔑 Key Concepts in Reactive Forms:</h2>
+  <ul class="list-group mb-4 bg-light border border-primary rounded">
+    <li class="list-group-item"><strong>FormGroup:</strong> A group of form controls, aggregating their values and validation states.</li>
+    <li class="list-group-item"><strong>FormControl:</strong> A single input field control, managing value, validation status, and user interactions.</li>
+    <li class="list-group-item"><strong>Validators:</strong> Functions for synchronous and asynchronous validation of form controls.</li>
+  </ul>
+
+  <!-- Example Form Section -->
+  <h3 class="text-warning display-6">💡 Example Reactive Form:</h3>
+  <form [formGroup]="reactiveForm" class="p-4 border rounded shadow-lg bg-white">
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="inputEmail4">Email</label>
+        <label for="inputEmail4" class="font-weight-bold">Email</label>
         <input type="email" formControlName="email" class="form-control" id="inputEmail4" placeholder="Email">
-      <div class="text-danger">
-        @if(reactiveForm.controls['email'].errors?.['required']){
-          <span>This is required</span>
-        } @else if(reactiveForm.controls['email'].errors?.['email']){
-          <span>not in email format</span>
-        }
-      </div>
+        <div class="text-danger mt-1" *ngIf="reactiveForm.controls['email'].invalid && reactiveForm.controls['email'].touched">
+          <small *ngIf="reactiveForm.controls['email'].errors?.['required']">Email is required.</small>
+          <small *ngIf="reactiveForm.controls['email'].errors?.['email']">Please enter a valid email.</small>
+        </div>
       </div>
       <div class="form-group col-md-6">
-        <label for="inputPassword4">Password</label>
+        <label for="inputPassword4" class="font-weight-bold">Password</label>
         <input type="password" formControlName="password" class="form-control" id="inputPassword4" placeholder="Password">
+        <div class="text-danger mt-1" *ngIf="reactiveForm.controls['password'].invalid && reactiveForm.controls['password'].touched">
+          <small *ngIf="reactiveForm.controls['password'].errors?.['required']">Password is required.</small>
+          <small *ngIf="reactiveForm.controls['password'].errors?.['minlength']">Password must be at least 8 characters long.</small>
+          <small *ngIf="reactiveForm.controls['password'].errors?.['passwordStrength']">{{ reactiveForm.controls['password'].errors?.['passwordStrength'] }}</small>
+        </div>
       </div>
     </div>
     <div class="form-group">
-      <label for="inputAddress">Address</label>
+      <label for="inputAddress" class="font-weight-bold">Address</label>
       <input type="text" formControlName="address1" class="form-control" id="inputAddress" placeholder="1234 Main St">
+      <div class="text-danger mt-1" *ngIf="reactiveForm.controls['address1'].invalid && reactiveForm.controls['address1'].touched">
+        <small>Address is required.</small>
+      </div>
     </div>
     <div class="form-group">
-      <label for="inputAddress2">Address 2</label>
+      <label for="inputAddress2" class="font-weight-bold">Address 2</label>
       <input type="text" formControlName="address2" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="inputCity">City</label>
+        <label for="inputCity" class="font-weight-bold">City</label>
         <input type="text" formControlName="city" class="form-control" id="inputCity">
+        <div class="text-danger mt-1" *ngIf="reactiveForm.controls['city'].invalid && reactiveForm.controls['city'].touched">
+          <small>City is required.</small>
+        </div>
       </div>
       <div class="form-group col-md-4">
-        <label for="inputState">State</label>
+        <label for="inputState" class="font-weight-bold">State</label>
         <select id="inputState" formControlName="state" class="form-control">
           <option selected>Choose...</option>
-          <option>telangana</option>
+          <option>Telangana</option>
           <option>AP</option>
           <option>Karnataka</option>
           <option>Tamil Nadu</option>
         </select>
+        <div class="text-danger mt-1" *ngIf="reactiveForm.controls['state'].invalid && reactiveForm.controls['state'].touched">
+          <small>State is required.</small>
+        </div>
       </div>
       <div class="form-group col-md-2">
-        <label for="inputZip">Zip</label>
+        <label for="inputZip" class="font-weight-bold">Zip</label>
         <input type="text" formControlName="zip" class="form-control" id="inputZip">
-        <div class="text-danger">
-          @if(reactiveForm.controls['zip'].errors?.['required']){
-            <span>This is required</span>
-          } 
-           @else if(reactiveForm.controls['zip'].errors?.['pattern']){
-            <span>only numbers please!</span>
-          }
-          @else if(reactiveForm.controls['zip'].errors?.['minlength']){
-            <span> min 6 numbers</span>
-          }
-          @else if (reactiveForm.controls['zip'].errors?.['maxlength']){
-            <span>not more than 6 numbers</span>
-          }
-         
+        <div class="text-danger mt-1" *ngIf="reactiveForm.controls['zip'].invalid && reactiveForm.controls['zip'].touched">
+          <small *ngIf="reactiveForm.controls['zip'].errors?.['required']">Zip code is required.</small>
+          <small *ngIf="reactiveForm.controls['zip'].errors?.['pattern']">Only numbers are allowed.</small>
+          <small *ngIf="reactiveForm.controls['zip'].errors?.['minlength']">Zip code must be 6 digits.</small>
+          <small *ngIf="reactiveForm.controls['zip'].errors?.['maxlength']">Zip code cannot exceed 6 digits.</small>
         </div>
       </div>
     </div>
     <div class="form-group">
       <div class="form-check">
         <input formControlName="checkbox" class="form-check-input" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck">
-          Check me out
-        </label>
+        <label class="form-check-label" for="gridCheck">Check me out</label>
+        <div class="text-danger mt-1" *ngIf="reactiveForm.controls['checkbox'].invalid && reactiveForm.controls['checkbox'].touched">
+          <small>You must agree before submitting.</small>
+        </div>
       </div>
     </div>
-    <button type="submit" (click)="onClick()" class="btn btn-primary">Sign in</button>
+    <button type="submit" (click)="onClick()" class="btn btn-primary btn-lg" [disabled]="reactiveForm.invalid">Sign in</button>
   </form>
-  <div class="col-3">
-    {{formValue | json}}
+
+  <!-- Form Value Preview Section -->
+  <div class="mt-5">
+    <h3 class="text-info">📜 Form Value Preview:</h3>
+    <pre class="bg-light p-3 rounded">{{formValue | json}}</pre>
   </div>
+
+  <!-- Comparison Section -->
+  <h3 class="text-warning mt-5">🔄 Template-Driven Forms Vs. Reactive Forms:</h3>
+  <div class="bg-light p-4 rounded shadow-sm border border-warning">
+    <p><strong>Template-Driven Forms:</strong></p>
+    <ul>
+      <li>Easier to use and understand, especially for simple forms.</li>
+      <li>Form logic is mostly in the template, which can make it less maintainable for complex forms.</li>
+      <li>Two-way data binding is used (<code>[(ngModel)]</code>) for form controls.</li>
+      <li>Less control over form validation and error handling compared to reactive forms.</li>
+    </ul>
+    
+    <p><strong>Reactive Forms:</strong></p>
+    <ul>
+      <li>More flexible and maintainable, especially for complex forms with dynamic fields.</li>
+      <li>Form logic resides in the component class, making it easier to test and manage.</li>
+      <li>Supports dynamic forms and custom validation better than template-driven forms.</li>
+      <li>Requires more boilerplate code compared to template-driven forms.</li>
+    </ul>
+
+    <p>In general, use <strong>template-driven forms</strong> for simple scenarios where quick implementation is more important than extensive form logic. Use <strong>reactive forms</strong> for complex scenarios where advanced validation, dynamic form controls, and maintainability are crucial.</p>
+  </div>
+
+  <!-- Conclusion Section -->
+  <h2 class="text-primary mt-5 display-5">🎯 Conclusion</h2>
+  <p class="lead">
+    Reactive forms provide a robust framework for managing form inputs and validation in Angular applications. By leveraging <code>FormGroup</code>, <code>FormControl</code>, and various <code>Validators</code>, you can create complex and dynamic forms with ease. The main advantage of reactive forms lies in their ability to handle complex scenarios and dynamic form interactions efficiently, making them a preferred choice for many advanced use cases.
+  </p>
+</div>

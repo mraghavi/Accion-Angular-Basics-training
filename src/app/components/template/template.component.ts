@@ -39,4 +39,7 @@ resetValue(){
   checkbox:""
 }
 }
+onSubmit(form: any) {
+  console.log('Form Data:', form.value);
+}
 }

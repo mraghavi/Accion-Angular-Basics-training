@@ -1,0 +1,104 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Blog Post Header */
+h1.display-4 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #e64d55;
+}
+
+p.lead {
+  font-size: 1.25rem;
+  color: #69717d;
+}
+
+/* Sections */
+section {
+  padding: 2rem 0;
+}
+
+h2.display-5 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h3.display-6 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+/* Features List */
+ul.list-group {
+  border-radius: .25rem;
+}
+
+.list-group-item {
+  border: none;
+  background-color: #f8f9fa;
+}
+
+.list-group-item i {
+  margin-right: .5rem;
+}
+
+/* Form Styles */
+form {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: .5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+  border-radius: .25rem;
+}
+
+.form-check-input {
+  margin-right: .5rem;
+}
+
+.btn {
+  border-radius: .25rem;
+  padding: .75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #e64d55;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #d43f4f;
+}
+
+.btn-secondary {
+  background-color: #69717d;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #5c6b75;
+}
+
+/* Validators */
+.text-danger {
+  color: #dc3545;
+}
+
+pre {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: .25rem;
+  overflow-x: auto;
+}

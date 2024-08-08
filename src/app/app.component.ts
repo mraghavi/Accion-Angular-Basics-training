@@ -12,13 +12,15 @@ import { LoginComponent } from './components/login/login.component';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { MessageModule } from 'primeng/message';
+import { RoutesComponent } from './components/routes/routes.component';
+import { ServiceComponent } from './components/service/service.component';
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ButtonModule,MessageModule,RippleModule,AlertComponent,LoginComponent,ApiGetComponent,HomeComponent,FormsModule, RouterOutlet , RouterLink,TemplateComponent,ReactiveComponent,PipesComponent,NotfoundComponent],
+  imports: [ButtonModule,RoutesComponent,ServiceComponent,MessageModule,RippleModule,AlertComponent,LoginComponent,ApiGetComponent,HomeComponent,FormsModule, RouterOutlet , RouterLink,TemplateComponent,ReactiveComponent,PipesComponent,NotfoundComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
   
