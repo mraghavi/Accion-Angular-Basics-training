@@ -1,13 +1,90 @@
-<div class="col-3">
-    <div class="row-4">
-        <app-alert [message]="'welcome to attribute directives component' " ></app-alert>
+<div class="container">
+    <h1>Angular Attribute Directives: A Practical Approach</h1>
+    <p>
+      The attribute directive modifies the look or behavior of a DOM element. These directives appear in templates as standard HTML attributes.
+    </p>
+  
+    <h2>Introduction to Attribute Directives</h2>
+    <p>
+      Angular attribute directives are wrapped by brackets, indicating to Angular that the appearance or behavior of the DOM elements included within the directive may vary based on specific situations.
+    </p>
+  
+    <h2>When Do We Use Attribute Directives?</h2>
+    <p>
+      Attribute directives are used when you want logic or events to affect the appearance or behavior of a view. They are particularly useful when you have a UI element that will be used across your project. By using an attribute directive, you can share it between components and modules, avoiding the need to write the same code multiple times.
+    </p>
+  
+    <h2>Most Commonly Used Attribute Directives</h2>
+    <ul>
+      <li><strong>ngClass</strong></li>
+      <li><strong>ngStyle</strong></li>
+    </ul>
+  
+    <h2>Usage of ngClass</h2>
+    <p>
+      Data bindings may be used to control an element's class memberships in three ways: regular property binding, special class binding, and the ngClass directive. Each of these methods functions somewhat differently and is beneficial in different situations.
+    </p>
+  
+    <h3>Example of ngClass:</h3>
+    <pre><code>
+  // Component Class
+  
+  changeColor: string = 'bg-rgb(15, 112, 186)';
+  
+  greenBtn() &#123;
+    this.changeColor = 'bg-success';
+    &#125;
+  
+  blueBtn() &#123;
+    this.changeColor = 'bg-primary';
+    &#125;
+    </code></pre>
+  
+    
+    <div class="directives" [ngClass]="changeColor">
+      <h2>BOX1</h2>
     </div>
-</div>
-<div class="directves" [ngClass]="changeColor">
-    <h2>BOX2</h2>
-</div>
-<div>
-    <button class="btn btn-blue me-2" (click)="blueBtn()">green</button>
-    <button class="btn btn-purple" (click) = "purpleBtn()">blue</button>
-    <button class="btn btn-secondary" (click)="navigatetoStructural()" >switch to Structural-directives</button>
-</div>
+  
+    <div class="button-group">
+      <button class="btn btn-success" (click)="greenBtn()">Green</button>
+      <button class="btn btn-primary" (click)="blueBtn()">Blue</button>
+    </div>
+  
+    <h2>Usage of ngStyle</h2>
+    <p>
+      Data bindings may be used to set the style properties of the host element in three ways: ordinary property binding, special style binding, and the ngStyle directive.
+    </p>
+  
+    <h3>Example of ngStyle:</h3>
+    
+    <pre><code>
+  // Component Class
+  
+  backgroundColor: string = 'lightblue';
+  textColor: string = 'black';
+  
+  applyStyles() &#123;
+    this.backgroundColor = 'yellow';
+    this.textColor = 'red';
+    &#125;
+    </code></pre>
+
+    <div [ngStyle]="{'background-color': backgroundColor, 'color': textColor}" class="styled-box">
+      <p>Box 2</p>
+    </div>
+  
+    <button class="btn btn-apply" (click)="applyStyles()">Apply Styles</button>
+  
+    <h2>Conclusion</h2>
+    <p>
+      Attribute Directives are essential tools in Angular for modifying the behavior, appearance, or style of an element based on user input or data from a service. Some of the most commonly used built-in directives include:
+    </p>
+    <ul>
+      <li><strong>ngClass</strong></li>
+      <li><strong>ngStyle</strong></li>
+    </ul>
+    <p>
+      By leveraging these directives, you can create more dynamic, interactive, and maintainable applications.
+    </p>
+  </div>
+  

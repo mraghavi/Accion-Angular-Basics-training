@@ -1,4 +1,63 @@
-<h2 class="main">one works!</h2>
-<div *ngFor = "let c of colors">
-    {{c}}
-</div>
+<div class="blog-container">
+    <h1>Understanding Dependency Injection (DI) and Services in Angular</h1>
+    <p>
+      In Angular, services are a fundamental way to encapsulate and share logic across your application. Dependency Injection (DI) is the mechanism that allows Angular to inject services into components, making them available for use.
+    </p>
+    <h2>What is a Service?</h2>
+    <p>
+      A service in Angular is typically a class with a specific purpose, such as fetching data, logging, or validation. Services help keep your components clean and focused on their core functionality by handling tasks that are shared across multiple components.
+    </p>
+    <h2>Injecting Services using Dependency Injection (DI)</h2>
+    <p>
+      Angular's Dependency Injection system allows you to inject services into components and other services. This is done by registering the service with Angular's injector and specifying the service in the component's constructor.
+    </p>
+    <h3>Example: Injecting a Basic Service into a Component</h3>
+    <pre>
+  <code>
+  // src/app/components/one/one.component.ts
+  import &#123;  Component, OnInit &#125;  from '&#64;angular/core';
+  import &#123;  BasicService &#125;  from '../../services/basic.service';
+  import &#123;  CommonModule &#125;  from '&#64;angular/common';
+  &#64;Component(&#123; 
+  selector: 'app-one',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './one.component.html',
+  styleUrls: ['./one.component.css']
+  &#125; )
+  export class OneComponent implements OnInit &#123; 
+  colors: any;
+  
+  constructor(private ts: BasicService)  &#123; &#125; 
+  
+  ngOnInit(): void &#123; 
+  this.colors = this.ts.getColors();
+  &#125; 
+  &#125; 
+  </code>
+  </pre>
+  
+    <p>
+      In this example, the `BasicService` is injected into the `OneComponent` through the constructor. The service is then used in the `ngOnInit` lifecycle hook to fetch a list of colors, which are stored in the `colors` property.
+    </p>
+    <h2>Displaying Data in the Template</h2>
+    <p>
+      Once the data is fetched from the service, it can be displayed in the component's template. In this case, we use the `*ngFor` directive to iterate over the list of colors and display each one.
+    </p>
+    <h3>Example: Using `*ngFor` to Display Colors</h3>
+    <pre>
+  <code>
+  // src/app/components/one/one.component.html
+  <div *ngFor="let c of colors">
+    {{ c }}
+  </div>
+  </code>
+  </pre>
+    <p   ngNonBindable>
+      The `*ngFor` directive iterates over the `colors` array, and each color is displayed within a `div` element. The double curly braces   {{  }}   are used to interpolate and display the value of each color.
+    </p>
+    <h2>Conclusion</h2>
+    <p>
+      Dependency Injection and services are powerful tools in Angular that promote modularity and code reusability. By encapsulating shared logic in services and injecting them into components, you can create more maintainable and scalable applications.
+    </p>
+  </div>

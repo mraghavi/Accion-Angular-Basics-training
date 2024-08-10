@@ -1,17 +1,170 @@
-<p>{{ message }}</p>
-<button [disabled]="isdisabled">Click me</button>
-<button (click)="myFunction()">Show alert</button>
-<div class="col-4">
-    <p>Your username is: {{ username }}</p>
-</div>
+<div class="blog-container">
+    <h1>Data Binding in Angular: A Comprehensive Guide</h1>
+  
+    <p>Data binding is a powerful feature in Angular that allows you to synchronize data between the model and the view. It helps create dynamic and interactive applications by providing a way to keep the UI in sync with the underlying data model. In this blog post, we’ll explore the different types of data binding in Angular with practical examples.</p>
+  
+    <h2>Types of Data Binding</h2>
+    <p>Angular supports several types of data binding:</p>
+    <ul>
+      <li>Property Binding</li>
+      <li>Event Binding</li>
+      <li>Two-Way Binding</li>
+      <li>Interpolation</li>
+    </ul>
+    <h1>Welcome to {{ title }}</h1>
+    <h2>1. Property Binding</h2>
+    <p>Property binding allows you to bind the value of a property in your component to a property of an HTML element. It is done using square brackets ([ ]).</p>
+  <div></div>
+    <pre>
+      <code ngNonBindable>
+        &lt;!-- app.component.html --&gt;
+        &lt;div&gt;
+          &lt;h1&gt;Welcome to {{ title }}&lt;/h1&gt;
+          &lt;input [value]="myName" /&gt;
+        &lt;/div&gt;
+      </code>
+    </pre>
+ <!-- app.component.html -->
 
-<input [(ngModel)]="username" />
-
-<input [(ngModel)]="userInput" />
-<p>Result: {{ userInput }}</p>
-<h2>{{userInput}} </h2>
-<input [(ngModel)] = "city" placeholder="Enter the city name">
-<p> City name is {{city}} </p>
-<div *ngFor = "let c of colors">
-    {{c}}
-</div>
+  
+    <pre>
+      <code>
+        // app.component.ts
+        import &#123; Component  &#125; from '&#64;angular/core';
+  
+        &#64;Component(&#123;
+          selector: 'app-root',
+          templateUrl: './app.component.html',
+          styleUrls: ['./app.component.css']
+        &#125;)
+        export class AppComponent &#123;
+          title = 'Data Binding Example';
+          myName = 'John Doe';
+        &#125;
+      </code>
+    </pre>
+    <div>
+        <div class="result-box"><h4>Result</h4>
+            <input [value]="myName" />
+          </div>
+        <p>In this example, the value of the <code>myName</code> property is bound to the <code>value</code> property of the input element.</p>
+      </div>
+   
+    <h2>2. Event Binding</h2>
+    <p>Event binding allows you to listen to events raised by the DOM and respond to them in your component. It is done using parentheses (( )).</p>
+  
+    <pre>
+      <code ngNonBindable>
+        &lt;!-- app.component.html --&gt;
+        &lt;div&gt;
+          &lt;button (click)="showMessage()"&gt;Click Me!&lt;/button&gt;
+          &lt;p&gt;{{ message }}&lt;/p&gt;
+        &lt;/div&gt;
+      </code>
+    </pre>
+  <!-- app.component.html -->
+  
+    <pre>
+      <code>
+        // app.component.ts
+        import  &#123; Component  &#125; from '&#64;angular/core';
+  
+        &#64;Component(&#123;
+          selector: 'app-root',
+          templateUrl: './app.component.html',
+          styleUrls: ['./app.component.css']
+        &#125;)
+        export class AppComponent &#123;
+          message = '';
+  
+          showMessage() &#123;
+            this.message = 'Button clicked!';
+          &#125;
+        &#125;
+      </code>
+    </pre>
+    <div class="result-box">
+    <h4>Result</h4>
+    <div>
+        <button (click)="showMessage()">Click Me!</button>
+        <p>{{ message }}</p>
+      </div>
+      </div>
+    <p>Here, the <code>showMessage</code> method is called when the button is clicked, updating the <code>message</code> property which is then displayed in the paragraph.</p>
+  
+    <h2>3. Two-Way Binding</h2>
+    <p>Two-way binding allows you to bind data between the model and the view in both directions. It is achieved using the <code>[( )]</code> syntax, also known as "banana-in-a-box" syntax.</p>
+  
+    <pre>
+      <code ngNonBindable>
+        &lt;!-- app.component.html --&gt;
+        &lt;div&gt;
+          &lt;input [(ngModel)]="name" placeholder="Enter your name" /&gt;
+          &lt;p&gt;Hello, {{ name }}!&lt;/p&gt;
+        &lt;/div&gt;
+      </code>
+    </pre>
+  <!-- app.component.html -->
+  
+    <pre>
+      <code>
+        // app.component.ts
+        import &#123; Component &#125;  from '&#64;angular/core';
+        import &#123;  FormsModule &#125;  from '&#64;angular/forms'; // Import FormsModule in your module
+  
+        &#64;Component(&#123; 
+          selector: 'app-root',
+          templateUrl: './app.component.html',
+          styleUrls: ['./app.component.css']
+        &#125;)
+        export class AppComponent &#123; 
+          name = '';
+        &#125;
+      </code>
+    </pre>
+    <div class="result-box"><h4>Result</h4>
+        <div>
+            <input [(ngModel)]="name" placeholder="Enter your name" />
+            <p>Hello, {{ name }}!</p>
+          </div>
+        </div>
+    
+    <p>In this example, <code>[(ngModel)]</code> creates a two-way binding between the <code>name</code> property and the input element. Changes to the input field automatically update the <code>name</code> property and vice versa.</p>
+  
+    <h2>4. Interpolation</h2>
+    <p>Interpolation allows you to embed expressions in your HTML templates. It is done using double curly braces (<code ngNonBindable>{{ }}</code>).</p>
+  
+    <pre>
+      <code ngNonBindable>
+        &lt;!-- app.component.html --&gt;
+        &lt;div&gt;
+          &lt;h1&gt;{{ greeting }}&lt;/h1&gt;
+          &lt;p&gt;Today is {{ today | date:'fullDate' }} &lt;/p&gt;
+        &lt;/div&gt;
+      </code>
+    </pre>
+  
+    <pre>
+      <code>
+        // app.component.ts
+        import &#123; Component &#125; from '&#64;angular/core';
+  
+        &#64;Component(&#123; 
+          selector: 'app-root',
+          templateUrl: './app.component.html',
+          styleUrls: ['./app.component.css']
+        &#125;)
+        export class AppComponent &#123; 
+          greeting = 'Hello, Angular!';
+          today = new Date();
+        &#125; 
+      </code>
+    </pre>
+    <div class="result-box"><h4>Result</h4>
+        <p>Here, <code>{{ greeting }}</code> and <code>{{ today | date:'fullDate' }}</code> are examples of interpolation, which evaluates the expressions and inserts their results into the HTML.</p>
+      </div>
+    
+    <h2>Conclusion</h2>
+    <p>Data binding is a fundamental concept in Angular that facilitates the dynamic synchronization of data between the model and the view. By mastering property binding, event binding, two-way binding, and interpolation, you can create more interactive and responsive Angular applications.</p>
+  </div>
+ 

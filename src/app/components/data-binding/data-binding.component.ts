@@ -12,7 +12,7 @@ import { MyButtonComponent } from '../../ReusableComponents/my-button/my-button.
   styleUrl: './data-binding.component.css'
 })
 export class DataBindingComponent {
-  message = 'Hello, Angular!';
+  messages = 'Hello, Angular!';
   isdisabled = false;
   myFunction() {
     alert('Success');
@@ -24,6 +24,14 @@ export class DataBindingComponent {
 
  constructor(private ts: BasicService){}
   colors = this.ts.color
-  
+  greeting = 'Hello, Angular!';
+  today = new Date();
+  name = '';
+  message = '';
+  title = 'Data Binding Example';
+  myName = 'John Doe';
+  showMessage() {
+    this.message = 'Button clicked!';
+  }
  
 }

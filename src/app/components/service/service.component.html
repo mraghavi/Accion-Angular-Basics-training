@@ -1,1 +1,155 @@
-<p>service works!</p>
+<div class="blog-container">
+  <h1>Understanding Dependency Injection (DI) and Services in Angular</h1>
+  <p>
+    In Angular, services are a fundamental way to encapsulate and share logic
+    across your application. Dependency Injection (DI) is the mechanism that
+    allows Angular to inject services into components, making them available
+    for use.
+  </p>
+
+  <h2>What is a Service?</h2>
+  <p>
+    A service is a broad category encompassing any value, function, or feature
+    that an application needs. Typically, a service is a class with a narrow,
+    well-defined purpose. It should perform a specific task, such as fetching
+    data, logging, or validation, and do it well.
+  </p>
+
+  <h3>Example of a Simple Logger Service:</h3>
+  <pre>
+<code>
+// src/app/logger.service.ts
+export class Logger &#123;
+  log(msg: any)   &#123; console.log(msg); &#125;
+  error(msg: any) &#123; console.error(msg); &#125;
+  warn(msg: any)  &#123; console.warn(msg); &#125;
+&#125;
+</code>
+</pre>
+  <p>
+    This <code>Logger</code> service provides basic logging functionalities
+    like logging messages, errors, and warnings to the browser's console.
+  </p>
+
+  <h2>Injecting Services using Dependency Injection (DI)</h2>
+  <p>
+    In Angular, Dependency Injection (DI) is used to provide components with
+    access to services. To inject a service into a component, Angular uses the
+    <code>&#64;Injectable()</code> decorator.
+  </p>
+
+  <h3>Creating a Hero Service with DI:</h3>
+  <pre>
+<code>
+// src/app/hero.service.ts
+import &#123; Injectable &#125; from '&#64;angular/core';
+import &#123; Logger &#125; from './logger.service';
+
+&#64;Injectable(&#123;
+  providedIn: 'root',
+&#125;)
+export class HeroService &#123;
+  constructor(private logger: Logger) &#123;&#125;
+
+  getHeroes() &#123;
+    this.logger.log('Fetching heroes...');
+    // Logic to fetch heroes
+  &#125;
+&#125;
+</code>
+</pre>
+  <p>
+    In the <code>HeroService</code>, the <code>Logger</code> service is
+    injected via the constructor, allowing the <code>HeroService</code> to log
+    messages when fetching heroes.
+  </p>
+
+  <h2>Providing Services</h2>
+  <p>
+    To use a service in your Angular application, you need to provide it. There
+    are different levels where you can provide services:
+  </p>
+  <ul>
+    <li><strong>Root Level</strong>: The service is available application-wide.</li>
+    <li>
+      <strong>Component Level</strong>: The service is available only within
+      that component and its children.
+    </li>
+  </ul>
+
+  <h3>Providing the HeroService at the Root Level:</h3>
+  <pre>
+<code>
+// src/app/hero.service.ts
+import &#123; Injectable &#125; from '&#64;angular/core';
+
+&#64;Injectable(&#123;
+  providedIn: 'root',
+&#125;)
+export class HeroService &#123;
+  // Service logic
+&#125;
+</code>
+</pre>
+  <p>
+    Here, the <code>providedIn: 'root'</code> metadata registers the
+    <code>HeroService</code> with the root injector, making it available
+    throughout the application.
+  </p>
+
+  <h3>Providing the HeroService at the Component Level:</h3>
+  <pre>
+<code>
+// src/app/hero-list.component.ts
+import &#123; Component &#125; from '&#64;angular/core';
+import &#123; HeroService &#125; from './hero.service';
+
+&#64;Component(&#123;
+  selector: 'app-hero-list',
+  templateUrl: './hero-list.component.html',
+  providers: [HeroService]
+&#125;)
+export class HeroListComponent &#123;
+  constructor(private heroService: HeroService) &#123;&#125;
+&#125;
+</code>
+</pre>
+  <p>
+    In this example, the <code>HeroService</code> is provided at the component
+    level, meaning each instance of <code>HeroListComponent</code> will have
+    its own instance of <code>HeroService</code>.
+  </p>
+
+  <h2>Using the Service in a Component</h2>
+  <p>
+    Once a service is provided, you can inject it into any component by
+    specifying it in the constructor.
+  </p>
+
+  <h3>Injecting the HeroService in a Component:</h3>
+  <pre>
+<code>
+// src/app/hero-list.component.ts
+import &#123; Component &#125; from '&#64;angular/core';
+import &#123; HeroService &#125; from './hero.service';
+
+&#64;Component(&#123;
+  selector: 'app-hero-list',
+  templateUrl: './hero-list.component.html',
+&#125;)
+export class HeroListComponent &#123;
+  constructor(private heroService: HeroService) &#123;
+    this.heroService.getHeroes();
+  &#125;
+&#125;
+</code>
+</pre>
+
+  <h2>Conclusion</h2>
+  <p>
+    Dependency Injection and services are key features of Angular that promote
+    modularity and reusability. By separating application logic into services
+    and using DI to inject them into components, you can create maintainable
+    and scalable Angular applications.
+  </p>
+</div>
