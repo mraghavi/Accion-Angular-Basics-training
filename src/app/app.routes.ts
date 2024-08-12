@@ -18,6 +18,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { RoutesComponent } from './components/routes/routes.component';
 import { ServiceComponent } from './components/service/service.component';
+import { authGuard } from './sevices/auth.guard';
 
 export const routes: Routes = [
     { 
@@ -38,73 +39,89 @@ export const routes: Routes = [
             
     {
         path :'home',
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate: [authGuard]
     },
     { 
         path: 'about-me', 
-        component: AboutMeComponent
+        component: AboutMeComponent,
+        canActivate: [authGuard]
      },
     { 
         path: 'contact', 
-        component: ContactComponent 
+        component: ContactComponent ,
+        canActivate: [authGuard]
     },
     {
          path: 'projects', 
-         component: ProjectsComponent 
+         component: ProjectsComponent ,
+         canActivate: [authGuard]
         },
     {
         path :'one',
-        component: OneComponent
+        component: OneComponent, 
+        canActivate: [authGuard]
     },
     {
         path :'two',
-        component: TwoComponent
+        component: TwoComponent,
+        canActivate: [authGuard]
     },
     {
         path :'data-binding',
-        component: DataBindingComponent
+        component: DataBindingComponent,
+        canActivate: [authGuard]
     },
     {
         path :'structural-directives',
-        component: StructuralDirectivesComponent
+        component: StructuralDirectivesComponent, 
+        canActivate: [authGuard]
     },
     {
         path :'attribute-directives',
-        component: AttributeDirectivesComponent
+        component: AttributeDirectivesComponent,
+        canActivate: [authGuard]
     },
     {
         path :'reactive-form',
-        component: ReactiveComponent
+        component: ReactiveComponent,
+        canActivate: [authGuard]
    
     },
     {
         path :'template-form',
-        component: TemplateComponent
+        component: TemplateComponent,
+        canActivate: [authGuard]
    
     },
     {
         path :'pipes',
-        component: PipesComponent
+        component: PipesComponent,
+        canActivate: [authGuard]
    
     },
     {
         path :'api-get',
-        component: ApiGetComponent
+        component: ApiGetComponent,
+         canActivate: [authGuard]
    
     },
     {
         path :'parent',
-        component: ParentComponent
+        component: ParentComponent,
+        canActivate: [authGuard]
    
     },
     {
         path :'routes',
-        component: RoutesComponent
+        component: RoutesComponent,
+        canActivate: [authGuard]
    
     },
     {
         path :'services',
-        component: ServiceComponent
+        component: ServiceComponent,
+        canActivate: [authGuard]
    
     }
    

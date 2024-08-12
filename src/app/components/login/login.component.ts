@@ -35,6 +35,7 @@ export class LoginComponent {
   onLogin() {
     if (this.userObj.userName === "admin" && this.userObj.password === '12345') {
       this.showSuccess();
+      localStorage.setItem('loginUser',this.userObj.userName );
       setTimeout(() => {
         this.router.navigateByUrl('home');
       }, 1000);

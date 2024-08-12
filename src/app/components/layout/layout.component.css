@@ -1,286 +1,200 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-/* reset all style */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
-}
-
-
-html,
-body {
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1.65;
-  scroll-behavior: smooth;
-  font-family: 'Roboto', sans-serif;
-  color: #000000; /* Text Color */
-}
-
-
-body {
-  overflow-x: hidden;
-}
-
-a {
-  color: #555555; /* Adjusted Link Color */
-}
-
-i {
-  cursor: pointer;
-}
-
-
-.brand-logo {
-  width: 100%;
-  height: 60px;
-  padding: 0 1em; 
+/* Side Navigation Bar */
+.side-navbar {
+  width: 250px;
+  height: 100%;
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  top: 0; /* Align with the top of the page */
+  margin-left: -300px;
+  background-color: #2c3e50; /* Darker blue-grey for a modern feel */
+  transition: 0.5s;
+  overflow-y: auto; /* Enable vertical scrolling */
+  z-index: 999; /* Ensure it is above other content but below the top navbar */
+}
+
+.nav-link:active,
+.nav-link:focus,
+.nav-link:hover {
+  background-color: #34495e; /* Slightly lighter shade for hover effect */
+  border-radius: 5px; /* Rounded corners for hover effect */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); /* Inner shadow effect */
+}
+
+.my-container {
+  transition: 0.4s;
+  padding: 20px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 60px; /* Adjust this value based on your navbar height */
+}
+
+.active-nav {
+  margin-left: 0;
+}
+
+.active-cont {
+  margin-left: 250px;
+}
+
+#menu-btn {
+  background-color: #e74c3c; /* Bright red button */
+  color: #ffffff;
+  margin-left: -62px;
+  border-radius: 50%; /* Circular button */
+  border: 2px solid #e74c3c; /* Border to match the button color */
+}
+
+#menu-btn:hover {
+  background-color: #ffffff;
+  color: #e74c3c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+.my-container input {
+  border-radius: 2rem;
+  padding: 2px 20px;
+  border: 1px solid #e74c3c; /* Add border color for input fields */
+}
+
+.nav-link a {
+  color: #ecf0f1; /* Light grey text */
+  text-decoration: none;
+  margin-left: 40px;
+  font-size: 18px; /* Increase the font size for better visibility */
   display: flex;
   align-items: center;
-  background-color: #cfd0d3; /* Dark Gray */
 }
 
+.nav-link i {
+  margin-right: 20px; /* Space between icon and text */
+}
+
+.nav-link a:hover {
+  color: #e74c3c; /* Bright red for hover effect */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Subtle text shadow effect */
+}
+
+.nav-link h3 {
+  color: #ecf0f1; /* Light grey for headings */
+}
+
+.nav-link li {
+  padding: 10px 0;
+}
+
+.nav-link span a {
+  margin-right: 10px;
+}
+
+.nav-link span a:hover {
+  color: #e74c3c; /* Bright red for hover effect */
+}
+
+/* Fixed Top Navbar */
+.top-navbar {
+  background-color: #ecf0f1; /* Light grey background */
+  border-bottom: 2px solid #2c3e50; /* Dark blue-grey border */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed; /* Keep the navbar fixed */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it is above the side navbar */
+  padding: 0 20px; /* Adjust padding if needed */
+}
+
+.menu-btn-container {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.top-navbar .logo {
+  height: 40px;
+  margin-left: 30px; /* Add spacing between menu button and logo */
+}
 
 .nav-icons {
   display: flex;
-  gap: 1em;
-  margin-left: auto;
-  margin-right: 1em;
+  gap: 20px;
+  margin-right: 20px; /* Adjust as needed for spacing */
 }
 
 .nav-icons a {
-  color: #121111; /* Light Gray */
-  font-size: 1.5rem;
-  transition: color 0.3s;
+  color: #2c3e50; /* Darker blue-grey for icons */
+  font-size: 20px; /* Slightly larger for better visibility */
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and transform transition */
+}
+
+.nav-icons a i {
+  margin-right: 5px;
 }
 
 .nav-icons a:hover {
-  color: #999b9c; /* White on hover */
+  color: #e74c3c; /* Bright red on hover for better contrast */
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
 }
 
-
-.logout-button {
-  display: flex;
-  align-items: center;
+/* Optional: Add a hover effect with a subtle shadow */
+.nav-icons a:hover i {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
 }
 
-.logout-button button {
-  background-color: #fe6100; /* Bright Orange */
-  color: #ffffff; /* White */
+/* Container Styles */
+.container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+  margin-bottom: 60px; /* Add space for the footer */
+  transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+.container:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+footer.footer {
+  background-color: #ecf0f1; /* Light grey background */
+  color: #2c3e50; /* Dark blue-grey text */
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #2c3e50; /* Dark blue-grey for headings */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+p {
+  color: #7f8c8d; /* Medium grey for paragraphs */
+}
+
+button, .btn {
+  background-color: #e74c3c; /* Bright red button */
+  color: #ffffff;
   border: none;
-  padding: 0.5em 1em;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  transition: background-color 0.3s;
+  border-radius: 4px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 
-.logout-button button:hover {
-  background-color: #e64d55; /* Darker Orange */
+button:hover, .btn:hover {
+  background-color: #ffffff;
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
 }
 
-.logout-button button i {
-  margin-right: 0.5em;
-}
-
-
-.logo-container {
-  flex-grow: 1; /* Ensures the logo is centered */
-  display: flex;
-  justify-content: flex-start;
-}
-
-.logo-image {
-  height: 40px; /* Adjust as needed */
-}
-
-/* toggle-menu style */
-.toggle-menu {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s;
-  color: #f0f0f0; /* Light Gray */
-}
-
-.toggle-menu i {
-  position: absolute;
-}
-
-.toggle-menu .btn-close {
-  display: none;
-  transition: all 0.3s;
-}
-
-.toggle-menu .btn-close:hover {
-  transition: all 0.3s;
-  transform: rotate(180deg);
-}
-
-.toggle-menu:hover {
-  border-radius: 50%;
-  background-color: #555555; /* Slightly Darker Gray */
-}
-
-
-.toggle-nav-item {
-  height: 100%;
-  padding: 0.6em;
-  position: fixed;
-  top: 60px;
-  left: 0;
-  z-index: 1;
-  background-color: #e3a1a1; /* Dark Gray */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.toggle-nav-item a {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.toggle-nav-item a li {
-  padding: 1em;
-  border-radius: 10px;
-  font-size: 0.7rem;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  color: #f0f0f0; /* Light Gray Text */
-  transition: all 0.3s;
-}
-
-.toggle-nav-item i {
-  font-size: 1.4rem;
-  margin-right: 0.5em;
-}
-
-.toggle-nav-item a li:hover {
-  background-color: #555555; /* Slightly Darker Gray */
-  color: #ffffff; /* White Text on hover */
-}
-
-
-.full-nav-item {
-  width: 20%;
-  height: 100%;
-  padding: 0.6em;
-  position: fixed;
-  top: 60px;
-  left: 0;
-  z-index: 1;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(-100%);
-  transition: all 0.3s;
-  background-color: #e87474; /* Dark Gray */
-  display: flex;
-  flex-direction: column;
-}
-
-.full-nav-item a {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.full-nav-item a li {
-  padding: 1.25em;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  color: #f0f0f0; /* Light Gray Text */
-  transition: all 0.3s;
-}
-
-.full-nav-item a li:hover {
-  padding-left: 2em;
-  background-color: #555555; /* Slightly Darker Gray */
-  color: #ffffff; /* White Text on hover */
-}
-
-.full-nav-item i {
-  width: 20px;
-  margin-right: 2em;
-}
-
-
-.show-full-nav-item {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(0);
-}
-
-/* wrapper-header style */
-.wrapper-header {
-  width: 100%;
-  padding-left: 2em;
-  padding-right: 6.4em;
-  position: absolute;
-  top: 60px;
-  left: 4.4em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: all 0.1s;
-  background-color: #f0f0f0; /* Light Gray Background */
-}
-
-
-.swipe-wrapper-header {
-  width: 80%;
-  left: 20%;
-  padding-right: 2em;
-  transition: all 0.15s ease 0.15s;
-}
-
-/* wrapper-header section style */
-.wrapper-header section {
-  width: 100%;
-  min-height: 500px;
-  padding: 0 1.5em;
-  padding-top: 5em;
-  margin-top: 2em;
-  border-radius: 10px;
-  text-align: center;
-  background-color: #9b2828; /* Bright Orange Background */
-}
-
-.wrapper-header section h1 {
-  margin-bottom: 1em;
-}
-
-.wrapper-header section h1::after {
-  content: '';
-  display: block;
-  width: 5%;
-  margin: auto;
-  border-bottom: 2px solid #000000; /* Black */
-}
-
-/* footer style */
-footer {
-  width: 100%;
-  padding: 1em;
-  margin-top: 8em;
-  text-align: center;
-  background-color: #f0f0f0; /* Dark Gray */
-  color: #262323; /* Light Gray Text */
+/* Logout Button */
+.side-navbar button.bx-log-out {
+  margin-left: 50px; /* Increase left margin */
 }
