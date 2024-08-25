@@ -33,7 +33,7 @@ export class LoginComponent {
   }
 
   onLogin() {
-    if (this.userObj.userName === "admin" && this.userObj.password === '12345') {
+    if (this.userObj.userName === "raghavi" && this.userObj.password === '0987') {
       this.showSuccess();
       localStorage.setItem('loginUser',this.userObj.userName );
       setTimeout(() => {

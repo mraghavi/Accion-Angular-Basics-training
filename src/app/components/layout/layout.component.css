@@ -9,14 +9,63 @@
   transition: 0.5s;
   overflow-y: auto; /* Enable vertical scrolling */
   z-index: 999; /* Ensure it is above other content but below the top navbar */
+  /* Rounded corners on the right side */
 }
+
+.nav-link {
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.nav-link:hover {
+  background-color: #3f3e42; /* Grey color for hover effect */
+}
+
+.nav-link a {
+  color: #ecf0f1; /* Light grey text */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 18px; /* Increase the font size for better visibility */
+}
+
+.nav-link i {
+  margin-right: 15px; /* Space between icon and text */
+}
+
+.nav-link a:hover {
+  color: #e74c3c; /* Bright red for hover effect */
+}
+
+/* Logout Button */
+.side-navbar button.bx-log-out {
+  margin: 20px 50px; /* Margin to center the button */
+  border-radius: 8px; /* Curved borders */
+  background-color: #e74c3c; /* Bright red button */
+  color: #ffffff;
+  border: 2px solid #e74c3c; /* Border to match the button color */
+  padding: 10px 20px; /* Adjust padding for a rectangular shape */
+  text-align: center; /* Center text */
+  transition: none; /* Remove transition effects */
+  cursor: pointer; /* Pointer cursor for button */
+  margin-right: 10px;
+}
+
+.side-navbar button.bx-log-out:hover {
+  background-color: #e9948a; /* Keep the background color */
+  color: #ffffff; /* Keep text color */
+  margin-left: 50px; /* No additional hover effects */
+}
+
+
 
 .nav-link:active,
 .nav-link:focus,
 .nav-link:hover {
-  background-color: #34495e; /* Slightly lighter shade for hover effect */
+  
   border-radius: 5px; /* Rounded corners for hover effect */
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); /* Inner shadow effect */
+ 
 }
 
 .my-container {
@@ -41,8 +90,13 @@
   background-color: #e74c3c; /* Bright red button */
   color: #ffffff;
   margin-left: -62px;
-  border-radius: 50%; /* Circular button */
+  border-radius: 8px; /* Curved borders with 8px radius */
   border: 2px solid #e74c3c; /* Border to match the button color */
+  width: 50px; /* Set a fixed width */
+  height: 50px; /* Set a fixed height to make it square */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #menu-btn:hover {
@@ -51,45 +105,15 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
 }
 
+
+
 .my-container input {
   border-radius: 2rem;
   padding: 2px 20px;
   border: 1px solid #e74c3c; /* Add border color for input fields */
 }
 
-.nav-link a {
-  color: #ecf0f1; /* Light grey text */
-  text-decoration: none;
-  margin-left: 40px;
-  font-size: 18px; /* Increase the font size for better visibility */
-  display: flex;
-  align-items: center;
-}
 
-.nav-link i {
-  margin-right: 20px; /* Space between icon and text */
-}
-
-.nav-link a:hover {
-  color: #e74c3c; /* Bright red for hover effect */
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Subtle text shadow effect */
-}
-
-.nav-link h3 {
-  color: #ecf0f1; /* Light grey for headings */
-}
-
-.nav-link li {
-  padding: 10px 0;
-}
-
-.nav-link span a {
-  margin-right: 10px;
-}
-
-.nav-link span a:hover {
-  color: #e74c3c; /* Bright red for hover effect */
-}
 
 /* Fixed Top Navbar */
 .top-navbar {
@@ -194,7 +218,4 @@ button:hover, .btn:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
 }
 
-/* Logout Button */
-.side-navbar button.bx-log-out {
-  margin-left: 50px; /* Increase left margin */
-}
+

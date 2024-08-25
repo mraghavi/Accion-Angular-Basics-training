@@ -14,13 +14,14 @@ import { RippleModule } from 'primeng/ripple';
 import { MessageModule } from 'primeng/message';
 import { RoutesComponent } from './components/routes/routes.component';
 import { ServiceComponent } from './components/service/service.component';
+import { ViewChildComponent } from './components/view-child/view-child.component';
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ButtonModule,RoutesComponent,ServiceComponent,MessageModule,RippleModule,AlertComponent,LoginComponent,ApiGetComponent,HomeComponent,FormsModule, RouterOutlet , RouterLink,TemplateComponent,ReactiveComponent,PipesComponent,NotfoundComponent],
+  imports: [ButtonModule,RoutesComponent,ServiceComponent,MessageModule,RippleModule,AlertComponent,LoginComponent,ApiGetComponent,HomeComponent,FormsModule, RouterOutlet , RouterLink,TemplateComponent,ReactiveComponent,PipesComponent,NotfoundComponent,ViewChildComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
   

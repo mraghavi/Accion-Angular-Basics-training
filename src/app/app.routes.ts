@@ -19,6 +19,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { RoutesComponent } from './components/routes/routes.component';
 import { ServiceComponent } from './components/service/service.component';
 import { authGuard } from './sevices/auth.guard';
+import { ViewChildComponent } from './components/view-child/view-child.component';
 
 export const routes: Routes = [
     { 
@@ -124,8 +125,25 @@ export const routes: Routes = [
         canActivate: [authGuard]
    
     }
+    
    
 ]
+    },
+    {
+        path :'view-child',
+        component: ViewChildComponent
+       
+   
+    },
+    {
+        path: 'test',
+        loadChildren:() => import('./lazyLoading/test/test.module').then(m=> m.TestModule)
+
+    },
+    {
+        path: 'new-version',
+        loadComponent:() => import('./lazyLoading/test/new-version/new-version.component').then(c=> c.NewVersionComponent)
+
     },
     {
         path: '**',
